@@ -2,9 +2,7 @@
 
    ```bash
    npm create vite@latest
-
-   ```bash
-   Select Typescript + SWC or Typescript
+   select Typescript + SWC or Typescript
 
 ## Expanding the ESLint configuration
 
