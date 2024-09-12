@@ -1,11 +1,14 @@
-# React + TypeScript + Vite
+# Jest + React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository is intended to explain how to set up Jest in a React project initialized with Vite and using TypeScript.
 
-Currently, two official plugins are available:
+## Project Initialization
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Create a new Vite project with TypeScript:**
+
+   ```bash
+   npm create vite@latest
+   Typescript + SWC
 
 ## Expanding the ESLint configuration
 
