@@ -1,14 +1,10 @@
-# Jest + React + TypeScript + Vite
-
-This repository is intended to explain how to set up Jest in a React project initialized with Vite and using TypeScript.
-
-## Project Initialization
-
 1. **Create a new Vite project with TypeScript:**
 
    ```bash
    npm create vite@latest
-   Typescript + SWC
+
+   ```bash
+   Select Typescript + SWC or Typescript
 
 ## Expanding the ESLint configuration
 
