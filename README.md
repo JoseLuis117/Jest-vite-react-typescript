@@ -18,3 +18,73 @@ This repository is intended to explain how to set up Jest in a React project ini
    npm i -D @babel/core @babel/preset-typescript
    npm i -D identity-obj-proxy
    npm i -D @testing-library/jest-dom
+
+3. **Add babel.config.js in the root directory:**
+   ```js
+   module.exports = {
+    presets: [
+        ['@babel/preset-env', { targets: { esmodules: true } }],
+        ['@babel/preset-react', { runtime: 'automatic' }],
+        '@babel/preset-typescript',
+    ],
+   };
+
+4. **Add jest.config.js in the root directory:**
+   ```js
+   module.exports = {
+    testEnvironment: 'jest-environment-jsdom',
+    setupFiles: ['./jest.setup.js'],
+    moduleNameMapper: {
+        "^.+\\.svg$": "jest-svg-transformer",
+        "\\.(css|less|scss)$": "identity-obj-proxy",
+    }
+   };
+
+4. **Add jest.config.js in the root directory:**
+   ```js
+   module.exports = {
+       testEnvironment: 'jest-environment-jsdom',
+       setupFiles: ['./jest.setup.js'],
+       moduleNameMapper: {
+           "^.+\\.svg$": "jest-svg-transformer",
+           "\\.(css|less|scss)$": "identity-obj-proxy",
+       }
+   };
+
+5. **Add jest.setup.js empty in the root directory:**
+
+5. **In the src directory add App.test.tsx, and write this:**
+   ```js
+   import { render, screen, fireEvent } from '@testing-library/react';
+   import '@testing-library/jest-dom';
+   import App from './App';
+   
+   
+   describe('App Component', () => {
+       test('renders Vite and React logos with correct links', () => {
+           render(<App />);
+   
+           const viteLogoLink = screen.getByRole('link', { name: /vite logo/i });
+           const reactLogoLink = screen.getByRole('link', { name: /react logo/i });
+   
+           expect(viteLogoLink).toHaveAttribute('href', 'https://vitejs.dev');
+           expect(reactLogoLink).toHaveAttribute('href', 'https://react.dev');
+       });
+   
+       test('renders initial count', () => {
+           render(<App />);
+           const buttonElement = screen.getByRole('button', { name: /count is 0/i });
+           expect(buttonElement).toBeInTheDocument();
+       });
+   
+       test('increments count when button is clicked', () => {
+           render(<App />);
+           const buttonElement = screen.getByRole('button', { name: /count is 0/i });
+   
+           // Click the button
+           fireEvent.click(buttonElement);
+   
+           // After the click, the count should increment
+           expect(buttonElement).toHaveTextContent('count is 1');
+       });
+   });
