@@ -53,7 +53,13 @@ This repository is intended to explain how to set up Jest in a React project ini
 
 5. **Add jest.setup.js empty in the root directory:**
 
-5. **In the src directory add App.test.tsx, and write this:**
+6. **Add script in the package.json:**
+    ```bash
+    "test":"jest --watchAll"
+
+6. **Remove "type": "module" in the package.json:**
+
+7. **In the src directory add App.test.tsx, and write this:**
    ```js
    import { render, screen, fireEvent } from '@testing-library/react';
    import '@testing-library/jest-dom';
