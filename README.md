@@ -40,16 +40,6 @@ This repository is intended to explain how to set up Jest in a React project ini
     }
    };
 
-4. **Add jest.config.js in the root directory:**
-   ```js
-   module.exports = {
-       testEnvironment: 'jest-environment-jsdom',
-       setupFiles: ['./jest.setup.js'],
-       moduleNameMapper: {
-           "^.+\\.svg$": "jest-svg-transformer",
-           "\\.(css|less|scss)$": "identity-obj-proxy",
-       }
-   };
 
 5. **Add jest.setup.js empty in the root directory:**
 
