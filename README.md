@@ -84,3 +84,7 @@ This repository is intended to explain how to set up Jest in a React project ini
            expect(buttonElement).toHaveTextContent('count is 1');
        });
    });
+
+## Prime React Error: 'Error: Could not parse CSS stylesheet'
+
+https://github.com/primefaces/primeng/issues/14085#issuecomment-1941347163
